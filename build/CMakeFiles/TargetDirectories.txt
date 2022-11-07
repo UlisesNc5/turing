@@ -1,0 +1,3 @@
+/home/lilith/turing_machine/build/CMakeFiles/turing.dir
+/home/lilith/turing_machine/build/CMakeFiles/edit_cache.dir
+/home/lilith/turing_machine/build/CMakeFiles/rebuild_cache.dir
