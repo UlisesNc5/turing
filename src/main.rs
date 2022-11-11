@@ -90,7 +90,7 @@ fn fast(instr : &String) -> bool {
         }
     }
 
-    return instr.len().is_power_of_two();
+    return instr.len().is_power_of_two() && instr.len() > 1;
 }
 
 fn slow(in_str: &String) -> bool{
