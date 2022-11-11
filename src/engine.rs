@@ -141,7 +141,7 @@ impl Program{
         match out_data.out_move{
             Moves::Right => {
                 self.pos += 1;
-                if self.pos == self.tape.len(){
+                if self.pos + 1 == self.tape.len(){
                     self.tape.push('\0');
                 }
             },

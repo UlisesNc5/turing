@@ -100,6 +100,11 @@ fn slow(in_str: &String) -> bool{
     };
     machine.set_tape(in_str.clone() + "\0");
     loop {
+        print!("⊢({}, {}, ", machine.curr, machine.pos);
+        for letter in machine.tape.chars(){
+            print!("{}", if letter == '\0' {'␢'} else {letter});
+        }
+        println!(")");
 
         match machine.step(){
             engine::Current::Ended => {return true;},
@@ -109,6 +114,11 @@ fn slow(in_str: &String) -> bool{
     }
 }
 
+fn main() {
+    slow(&"\0aaaa".to_string());
+}
+
+/*
 fn main() -> Result<(), io::Error>{
     // setup terminal
     let mut stdout = io::stdout();
@@ -177,4 +187,4 @@ fn main() -> Result<(), io::Error>{
     disable_raw_mode()?;
     // end restore
     return result;
-}
+}*/
