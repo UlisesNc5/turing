@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/lilith/turing_machine/build",
-  "command": "/usr/bin/c++  -I/home/lilith/turing_machine/include -I/home/lilith/turing_machine/dependecies/glad/include -I/home/lilith/turing_machine/dependecies/glm -I/home/lilith/turing_machine/dependecies -std=gnu++17 -o CMakeFiles/turing.dir/src/main.cpp.o -c /home/lilith/turing_machine/src/main.cpp",
-  "file": "/home/lilith/turing_machine/src/main.cpp"
-}
-]
