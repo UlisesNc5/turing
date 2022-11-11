@@ -79,14 +79,14 @@ pub fn compile_file(path: &str) -> Result<Program, Error>{
             return Error::newe(ErrorCode::ParseError, "delta len is not 2")
         }
         rule.in_state  = split[0].to_string();
-        rule.in_symbol = split[1].to_string();
+        rule.in_symbol = split[1].chars().nth(0).unwrap();
 
         split = result.split(',').collect();
         if split.len() != 3{
             return Error::newe(ErrorCode::ParseError, "delta len is not 3")
         }
         rule.out_state  = split[0].to_string();
-        rule.out_symbol = split[1].to_string();
+        rule.out_symbol = split[1].chars().nth(0).unwrap();
         rule.out_move = match split[2].chars().next().unwrap(){
             '<' => {Moves::Left},
             '>' => {Moves::Right},

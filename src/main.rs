@@ -93,21 +93,14 @@ fn fast(instr : &String) -> bool {
     return instr.len().is_power_of_two();
 }
 
-fn slow(instr : &String) -> bool{
+fn slow(in_str: &String) -> bool{
     let mut machine = match compiler::compile_file("test.tr"){
         Ok(r) => r,
-        Err(_) => {
-            println!("fucked!\n");
-            return false;
-        },
+        Err(_) => {return false;},
     };
-    let mut make_vec : Vec<String> = Vec::new();
-    for chr in instr.chars(){
-        make_vec.push(chr.to_string());
-    }
-    make_vec.push("\0".to_string());
-    machine.set_tape(make_vec);
+    machine.set_tape(in_str.clone() + "\0");
     loop {
+
         match machine.step(){
             engine::Current::Ended => {return true;},
             engine::Current::Died  => {return false;}
@@ -115,7 +108,6 @@ fn slow(instr : &String) -> bool{
         }
     }
 }
-
 
 fn main() -> Result<(), io::Error>{
     // setup terminal
